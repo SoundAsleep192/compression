@@ -5,14 +5,19 @@ const plus300prefix = String.fromCharCode(120)
 export function serialize(array: number[]): string {
   return array
     .map((n) => {
-      let value = String.fromCharCode(n % 100)
+      const value = String.fromCharCode(n % 100)
       if (n >= 100 && n < 200) {
-        value = plus100prefix + value
-      } else if (n >= 200 && n < 300) {
-        value = plus200prefix + value
-      } else if (n === 300) {
-        value = plus300prefix + value
+        return plus100prefix + value
       }
+
+      if (n >= 200 && n < 300) {
+        return plus200prefix + value
+      }
+
+      if (n === 300) {
+        return plus300prefix + value
+      }
+
       return value
     })
     .join('')

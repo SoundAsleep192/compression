@@ -16,7 +16,7 @@ function getSamples(array: number[]): Samples {
   return { deserialized, ratio }
 }
 
-describe('Compress', () => {
+describe('Функции сжатия и распаковки', () => {
   const ratios: number[] = []
   test('Простейшие короткие', () => {
     const array = generateArray(10).map(() => generateRandomInteger(1, 9))
